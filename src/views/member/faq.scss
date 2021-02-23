@@ -1,0 +1,23 @@
+.faq-box {
+    padding: 0 10px;
+    background: #fff;
+}
+.faq-list {
+    margin-top: 10px;
+}
+.faq-list .list-item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    box-shadow: -2px -2px 15px 1px rgba(0,0,0,0.05),2px 2px 15px 1px rgba(0,0,0,0.05);
+}
+.faq-list .list-item .title {
+    font-size: 14px;
+    padding: 15px 20px;
+}
+.faq-list .list-item .content {
+    color: #666;
+    padding: 20px;
+    border-top: 1px solid #e8e8ee;
+}

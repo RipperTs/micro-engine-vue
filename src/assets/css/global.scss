@@ -1,0 +1,205 @@
+/*=== global ===*/
+/* fonts */
+.iconfont {
+  font-family: "iconfont";
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.nut-fixednav .fixed-btn{
+  background: #6979F8;
+}
+div {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+button {
+
+  outline: none;
+
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* fonts end */
+/* color */
+$font-size-base: 12px;
+$main-color: #6979F8;
+$primary-color: $main-color;
+$normal-color: #848484;
+$link-color: $primary-color;
+$link-hover-color: mix($link-color, #000, 80%);
+$title-color: #2D2D2D;
+$text-color: #848484;
+$light-color: #F6F6F6;
+$dark-color: #DADADA;
+$active-main: #ffbe45;
+$font-color: #323232;
+$color-90: #909090;
+$white: #fff;
+$red: #6979F8;
+$green: #2ba246;
+$border: #e1e1e1;
+$bordereee: #eee;
+$bg: #f4f4f4;
+/* color end */
+/* common class */
+@mixin height-vw($vw,$ww) {
+  height: ($vw / $ww) * 100vw;
+  max-height: $vw + 0px;
+}
+
+@mixin width-vw($vw,$ww) {
+  width: ($vw / $ww) * 100vw;
+  max-width: $vw + 0px;
+}
+
+body {
+  font-family: "Helvetica Neue", "Open Sans", "San Francisco", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+  color: $font-color;
+  max-width: 750px;
+  margin: 0 auto !important;
+  background: $white;
+  overflow: hidden;
+}
+
+@mixin transition($timer: .3s,$action: ease-out) {
+  -webkit-transition: all $timer $action;
+  -moz-transition: all $timer $action;
+  -ms-transition: all $timer $action;
+  -o-transition: all $timer $action;
+  transition: all $timer $action;
+
+}
+
+@mixin scale($x,$y) {
+  -webkit-transform: scale($x, $y);
+  -moz-transform: scale($x, $y);
+  -ms-transform: scale($x, $y);
+  -o-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
+@mixin tlate($x,$y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin trotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin tdelay($time:0s) {
+  -webkit-transition-delay: $time;
+  -moz-transition-delay: $time;
+  -ms-transition-delay: $time;
+  -o-transition-delay: $time;
+  transition-delay: $time;
+}
+
+@mixin radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin text-field($rows:1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+}
+
+@mixin font-small($size:10px) {
+  display: inline-block;
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(1);
+  font-size: 10px;
+}
+
+@mixin shadow($size: 15px,$color:rgba(0,0,0,.08)) {
+  -webkit-box-shadow: -2px -1px $size $color, 2px 1px $size $color;
+  -moz-box-shadow: -2px -1px $size $color, 2px 1px $size $color;
+  box-shadow: -2px -1px $size $color, 2px 1px $size $color;
+}
+
+@mixin bg-linear($start: #fdaf64,$end: #fd6b0c) {
+  background: $main-color;
+  background: -moz-linear-gradient(-135deg, $start 1%, $end 100%);
+  background: -webkit-linear-gradient(-135deg, $start 1%, $end 100%);
+  background: -o-linear-gradient(-135deg, $start 1%, $end 100%);
+  background: -ms-linear-gradient(-135deg, $start 1%, $end 100%);
+}
+
+@mixin gradient-text($main-color: #000, $c-from: #0dcfce) {
+  background-image: -webkit-linear-gradient(-135deg, $main-color, $c-from);
+  -webkit-text-fill-color: $c-from;
+  -webkit-background-clip: text;
+  -webkit-background-size: 1% 100%;
+}
+
+@mixin blur($blur: 10) {
+  filter: url(blur.svg#blur);
+  -webkit-filter: blur($blur + 0px);
+  -moz-filter: blur($blur + 0px);
+  -ms-filter: blur($blur + 0px);
+  filter: blur($blur + 0px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$blur, MakeShadow=false);
+}
+
+//触底加载动画
+.loading-container {
+  padding: 5px 0;
+  text-align: center;
+}
+
+//加载没有更多数据
+.not-result {
+  padding: 5px 0;
+  text-align: center;
+}
+
+/* common class end */
+.noresult {
+  max-width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+  height: 100vh;
+
+  .browse-btn {
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    @include radius(5px);
+    text-align: center;
+    background: $main-color;
+    color: $white;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}

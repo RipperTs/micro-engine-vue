@@ -1,0 +1,9 @@
+var tool = {
+    // 返回带*手机号
+    starPhone : function(phone) {
+        return phone.replace(phone.substring(3,7),'****');
+    }
+}
+module.exports = {
+    starPhone: tool.starPhone
+}
